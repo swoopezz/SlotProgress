@@ -18,7 +18,7 @@ unlock_quests:
   12:
     type: statistic
     statistic: damage_taken
-    amount: 100000
+    amount: 10000
   13:
     type: statistic
     statistic: damage_blocked_by_shield

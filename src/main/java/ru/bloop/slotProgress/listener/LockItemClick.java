@@ -1,6 +1,7 @@
 package ru.bloop.slotProgress.listener;
 
 import org.bukkit.Sound;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -12,11 +13,9 @@ public class LockItemClick implements Listener {
     public void onClick(InventoryClickEvent event) {
         if (event.getCurrentItem() == null) return;
         if (!LockItem.isItem(event.getCurrentItem())) return;
+        if (!(event.getWhoClicked() instanceof Player player)) return;
 
         event.setCancelled(true);
-        event.getWhoClicked().getWorld().playSound(
-            event.getWhoClicked().getEyeLocation(),
-            Sound.BLOCK_NOTE_BLOCK_BASS, 1, 1
-        );
+        player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASEDRUM, 1, 1);
     }
 }
