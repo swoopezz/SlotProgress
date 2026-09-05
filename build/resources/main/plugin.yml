@@ -1,6 +1,0 @@
-name: SlotProgress
-version: '0.1.0'
-
-main: ru.bloop.slotProgress.SlotProgress
-api-version: '1.21.6'
-load: POSTWORLD
