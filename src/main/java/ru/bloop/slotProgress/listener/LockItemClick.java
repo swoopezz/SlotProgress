@@ -15,7 +15,7 @@ public class LockItemClick implements Listener {
         if (!LockItem.isItem(event.getCurrentItem())) return;
         if (!(event.getWhoClicked() instanceof Player player)) return;
 
-        event.setCancelled(true);
         player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASEDRUM, 1, 1);
+        event.setCancelled(true);
     }
 }
