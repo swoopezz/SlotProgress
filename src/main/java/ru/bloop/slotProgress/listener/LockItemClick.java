@@ -16,7 +16,7 @@ public class LockItemClick implements Listener {
         event.setCancelled(true);
         event.getWhoClicked().getWorld().playSound(
             event.getWhoClicked().getEyeLocation(),
-            Sound.ENTITY_VILLAGER_NO, 1, 0
+            Sound.BLOCK_NOTE_BLOCK_BASS, 1, 1
         );
     }
 }

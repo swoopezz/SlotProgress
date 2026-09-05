@@ -24,13 +24,13 @@ public class KillEntityTask extends StatisticTask {
 
     @Override
     public boolean isCompleted(Player player) {
-        return getReqAmount() >= player.getStatistic(statistic, type);
+        return completedValue(player) >= getReqAmount();
     }
 
     @Override
     public List<Component> lore(int completed) {
         return List.of(
-            MiniMessage.miniMessage().deserialize("<!i><gray>Убить " + completed + "/" + getReqAmount() + " " + type.translationKey())
+            MiniMessage.miniMessage().deserialize("<!i><gray>Убить " + completed + "/" + getReqAmount() + " " + type.name().toLowerCase())
         );
     }
 
@@ -39,6 +39,7 @@ public class KillEntityTask extends StatisticTask {
         return "KillEntityTask{" +
                 "type=" + type +
                 ", statistic=" + statistic +
+                ", requeried =" + getReqAmount() +
                 '}';
     }
 }

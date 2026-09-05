@@ -7,15 +7,17 @@ import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.components.CustomModelDataComponent;
 import org.bukkit.persistence.PersistentDataType;
 
 import java.util.List;
 
 public class LockItem {
 
-    public static final Component NAME = MiniMessage.miniMessage().deserialize("<!i><white>Недоступно");
+    public static final Component NAME = MiniMessage.miniMessage().deserialize("<!i><red>Недоступно");
     public static final Material MATERIAL = Material.BARRIER;
     public static final NamespacedKey NK = new NamespacedKey("slot_progress", "lock_item");
+    public static final int CUSTOM_MD = 9492;
 
     public static ItemStack toItemStack(List<Component> lore) {
         final ItemStack item = new ItemStack(MATERIAL);
@@ -24,7 +26,8 @@ public class LockItem {
         meta.lore(lore);
         meta.displayName(NAME);
         meta.setMaxStackSize(1);
-        meta.setItemModel(NK);
+        //noinspection deprecation
+        meta.setCustomModelData(CUSTOM_MD);
         meta.setEnchantmentGlintOverride(true);
         meta.getPersistentDataContainer().set(NK, PersistentDataType.BOOLEAN, true);
 

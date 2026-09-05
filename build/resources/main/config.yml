@@ -1,56 +1,113 @@
 
 debug: true
+update_period: 40 # ticks
 
 unlock_quests:
   9:
     type: statistic
     statistic: walk_one_cm
-    amount: 10000 # 1000m
+    amount: 50000 # 5км
   10:
     type: statistic
     statistic: jump
-    amount: 1000
+    amount: 5000
   11:
     type: statistic
     statistic: mob_kills
-    amount: 100
+    amount: 500
   12:
     type: statistic
-    statistic: mob_kills
-    amount: 100
+    statistic: damage_taken
+    amount: 100000
   13:
     type: statistic
-    statistic: damage_taken
-    amount: 30000
+    statistic: damage_blocked_by_shield
+    amount: 5000
   14:
     type: statistic
-    statistic: damage_blocked_by_shield
-    amount: 1000
+    statistic: item_enchanted
+    amount: 150
   15:
     type: statistic
-    statistic: item_enchanted
-    amount: 42
+    statistic: damage_resisted
+    amount: 50000
   16:
     type: statistic
-    statistic: damage_resisted
-    amount: 10000
+    statistic: fish_caught
+    amount: 300
   17:
     type: statistic
-    statistic: fish_caught
+    statistic: sleep_in_bed
     amount: 100
   18:
-    type: statistic
-    statistic: sleep_in_bed
-    amount: 30
-  19:
     type: break_block
     block: deepslate_diamond_ore
-    amount: 128
-  20:
+    amount: 512
+  19:
     type: break_block
     block: amethyst_block
-    amount: 256
-  21:
+    amount: 512
+  20:
     type: break_block
     block: ancient_debris
-    amount: 100
+    amount: 128
+  21:
+    type: break_block
+    block: deepslate_coal_ore
+    amount: 32
+  22:
+    type: break_block
+    block: nether_gold_ore
+    amount: 1028
+  23:
+    type: break_block
+    block: obsidian
+    amount: 256
+  24:
+    type: break_block
+    block: deepslate_redstone_ore
+    amount: 1500
+  25:
+    type: break_block
+    block: deepslate_lapis_ore
+    amount: 500
+  26:
+    type: break_block
+    block: gilded_blackstone
+    amount: 400
+  27:
+    type: kill_entity
+    entity: zombie
+    amount: 500
+  28:
+    type: kill_entity
+    entity: skeleton
+    amount: 400
+  29:
+    type: kill_entity
+    entity: creeper
+    amount: 250
+  30:
+    type: kill_entity
+    entity: spider
+    amount: 300
+  31:
+    type: kill_entity
+    entity: enderman
+    amount: 150
+  32:
+    type: kill_entity
+    entity: blaze
+    amount: 128
+  33:
+    type: kill_entity
+    entity: wither_skeleton
+    amount: 500
+  34:
+    type: kill_entity
+    entity: piglin_brute
+    amount: 48
+  35:
+    type: kill_entity
+    entity: ghast
+    amount: 32

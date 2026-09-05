@@ -23,13 +23,13 @@ public class BreakBlockTask extends StatisticTask {
 
     @Override
     public boolean isCompleted(Player player) {
-        return getReqAmount() >= completedValue(player);
+        return completedValue(player) >= getReqAmount();
     }
 
     @Override
     public List<Component> lore(int completed) {
         return List.of(
-            MiniMessage.miniMessage().deserialize("<!i><gray>Добыть " + completed + "/" + getReqAmount() + " " + blockType.translationKey())
+            MiniMessage.miniMessage().deserialize("<!i><gray>Добыть " + completed + "/" + getReqAmount() + " " + blockType.name().toLowerCase())
         );
     }
 

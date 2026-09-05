@@ -136,10 +136,6 @@ public class SlotConfig {
      private boolean isValidSlotSection(ConfigurationSection section) {
             if (section == null) return false;
 
-            for (String key : section.getKeys(false)) {
-                SlotProgress.debug(key, Level.INFO);
-            }
-
             if (!section.contains("type")) return false;
             if (!section.contains("amount")) return false;
 
