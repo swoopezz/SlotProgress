@@ -28,7 +28,6 @@ public class LockItem {
         meta.setMaxStackSize(1);
         //noinspection deprecation
         meta.setCustomModelData(CUSTOM_MD);
-        meta.setEnchantmentGlintOverride(true);
         meta.getPersistentDataContainer().set(NK, PersistentDataType.BOOLEAN, true);
 
         item.setItemMeta(meta);
