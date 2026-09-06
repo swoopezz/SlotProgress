@@ -18,7 +18,7 @@ unlock_quests:
   12:
     type: statistic
     statistic: damage_taken
-    amount: 100000
+    amount: 10000
   13:
     type: statistic
     statistic: damage_blocked_by_shield
@@ -111,3 +111,113 @@ unlock_quests:
     type: kill_entity
     entity: ghast
     amount: 32
+
+ender_chest_quests:
+  0:
+    type: statistic
+    statistic: fly_one_cm
+    amount: 1000000 # 10км полёта на элитрах
+  1:
+    type: statistic
+    statistic: swim_one_cm
+    amount: 250000 # 2.5км плавания
+  2:
+    type: statistic
+    statistic: crouch_one_cm
+    amount: 50000 # 500м приседаний
+  3:
+    type: statistic
+    statistic: sprint_one_cm
+    amount: 2000000 # 20км спринта
+  4:
+    type: statistic
+    statistic: horse_one_cm
+    amount: 500000 # 5км на лошади
+  5:
+    type: statistic
+    statistic: boat_one_cm
+    amount: 1050000 # 10.5км на лодке
+  6:
+    type: statistic
+    statistic: pig_one_cm
+    amount: 50000 # 500м на свинье
+  7:
+    type: statistic
+    statistic: strider_one_cm
+    amount: 100000 # 1км на страйдере
+  8:
+    type: statistic
+    statistic: minecart_one_cm
+    amount: 200000 # 2км на вагонетке
+  9:
+    type: break_block
+    block: deepslate_emerald_ore
+    amount: 64 # 64 изумрудной руды (редкая!)
+  10:
+    type: break_block
+    block: budding_amethyst
+    amount: 128 # 32 почкующегося аметиста
+  11:
+    type: break_block
+    block: crying_obsidian
+    amount: 256 # 128 плачущего обсидиана
+  12:
+    type: break_block
+    block: dragon_egg
+    amount: 1
+  13:
+    type: break_block
+    block: reinforced_deepslate
+    amount: 64
+  14:
+    type: break_block
+    block: ancient_debris
+    amount: 512
+  15:
+    type: break_block
+    block: netherite_block
+    amount: 32 # 32 блока незерита
+  16:
+    type: break_block
+    block: diamond_block
+    amount: 128 # 128 блоков алмазов
+  17:
+    type: break_block
+    block: emerald_block
+    amount: 256 # 256 блоков изумрудов
+  18:
+    type: kill_entity
+    entity: elder_guardian
+    amount: 25
+  19:
+    type: kill_entity
+    entity: wither
+    amount: 5 # 5 визеров
+  20:
+    type: kill_entity
+    entity: ender_dragon
+    amount: 5 # 5 драконов
+  21:
+    type: kill_entity
+    entity: piglin_brute
+    amount: 128 # 128 брутальных пиглинов
+  22:
+    type: kill_entity
+    entity: hoglin
+    amount: 500 # 500 хоглинов
+  23:
+    type: kill_entity
+    entity: zoglin
+    amount: 250 # 250 зоглинов
+  24:
+    type: kill_entity
+    entity: ravager
+    amount: 100 # 100 разорителей
+  25:
+    type: kill_entity
+    entity: vex
+    amount: 200 # 200 вексов
+  26:
+    type: kill_entity
+    entity: warden
+    amount: 1

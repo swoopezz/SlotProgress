@@ -16,30 +16,32 @@ import java.util.logging.Level;
 
 public class SlotConfig {
 
-    public static final String SLOT_CONFIG_FIELD = "unlock_quests";
     public static final Set<Integer> LOCKABLE_SLOTS = Set.of(
+        0,   1,  2,  3,  4,  5,  6,  7,  8,
         9,  10, 11, 12, 13, 14, 15, 16, 17,
         18, 19, 20, 21, 22, 23, 24, 25, 26,
         27, 28, 29, 30, 31, 32, 33, 34, 35
     );
 
     private final FileConfiguration config;
+    private final String path;
 
-    public SlotConfig(FileConfiguration config) {
+    public SlotConfig(String path, FileConfiguration config) {
+        this.path = path;
         this.config = config;
     }
 
-     public Map<Integer, SlotTask> load() {
+     public Map<Integer, SlotTask> load(int from, int to) {
         final Map<Integer, SlotTask> result = new HashMap<>();
-        final ConfigurationSection section = config.getConfigurationSection(SLOT_CONFIG_FIELD);
+        final ConfigurationSection section = config.getConfigurationSection(path);
 
         if (section == null)
-            return loadDefaults();
+            return loadDefaults(from, to);
 
         for (String key: section.getKeys(false)) {
             int slot = 0;
 
-            try { slot = Integer.parseInt(key); } catch (NumberFormatException e) { SlotProgress.debug("Undefined key in " + SLOT_CONFIG_FIELD + ", ignoring it.", Level.WARNING);}
+            try { slot = Integer.parseInt(key); } catch (NumberFormatException e) { SlotProgress.debug("Undefined key in " + path + ", ignoring it.", Level.WARNING);}
             if (!LOCKABLE_SLOTS.contains(slot)) continue; // pohui
 
             final ConfigurationSection slotSection = section.getConfigurationSection(key);
@@ -66,7 +68,7 @@ public class SlotConfig {
 
         SlotProgress.debug("Creating default tasks", Level.INFO);
         int counter = 0;
-        for (int i = 9; i < 36; ++i) {
+        for (int i = from; i < to; ++i) {
             if (!result.containsKey(i)) {
                 result.put(i, createDefaultTask());
                 counter++;
@@ -79,14 +81,14 @@ public class SlotConfig {
 
 
      public SlotTask createDefaultTask() {
-        return new BreakBlockTask(Material.STONE, 10000);
+        return new BreakBlockTask(Material.STONE, 1000);
      }
 
-     public Map<Integer, SlotTask> loadDefaults() {
+     public Map<Integer, SlotTask> loadDefaults(int from, int to) {
         final Map<Integer, SlotTask> def = new HashMap<>();
         final Random random = new Random();
 
-        for (int slot = 9; slot < 36; slot++) {
+        for (int slot = from; slot < to; slot++) {
             def.put(slot, new BreakBlockTask(Material.STONE, random.nextInt(10, 100)));
         }
 
